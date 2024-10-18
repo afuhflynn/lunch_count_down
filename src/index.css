@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --pattern-bg: url("./assets/pattern-hills.svg");
+  --bg-stars: url("./assets/bg-stars.svg");
+}
+
+.heading{
+  word-spacing: 0.4rem;
+}
+
+.rotate{
+  animation: animate-cart 1s 0s infinite ease-in-out;
+}
+
+
+
+@keyframes animate-cart {
+  from{
+    transform: rotateX(0deg);
+  }
+  to{
+    transform: rotateX(90deg);
+  }
+}
+
+@layer components{
+  .box-container{
+    @apply flex-1 lg:h-[10rem] md:h-[9rem] h-[8rem] w-[6rem] lg:w-[7rem] md:w-[8rem] flex flex-col items-center justify-center font-main gap-6 cursor-default;
+  }
+  .clock-box{
+    @apply bg-dark-desaturated-blue h-[90%] w-full flex flex-col items-center justify-center rounded-md relative shadow-lg shadow-black;
+  }
+}
